@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Management System (Client-Side Demo)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Clinic Dashboard</h1>
+            <nav>
+                <button class="nav-button active" data-tab="patients">Patients</button>
+                <button class="nav-button" data-tab="appointments">Appointments</button>
+                <button class="nav-button" data-tab="add-patient">Add Patient</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="patients" class="tab-content active">
+                <h2>Patient List</h2>
+                <input type="text" id="patientSearch" placeholder="Search patients...">
+                <table id="patientTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </section>
+
+            <section id="appointments" class="tab-content">
+                <h2>Upcoming Appointments</h2>
+                <p>This section would list appointments. (Data not implemented in this demo)</p>
+                </section>
+
+            <section id="add-patient" class="tab-content">
+                <h2>Add New Patient</h2>
+                <form id="addPatientForm">
+                    <div class="form-group">
+                        <label for="patientName">Name:</label>
+                        <input type="text" id="patientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientAge">Age:</label>
+                        <input type="number" id="patientAge" required min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="patientGender">Gender:</label>
+                        <select id="patientGender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientContact">Contact No.:</label>
+                        <input type="tel" id="patientContact" pattern="[0-9]{10}" placeholder="e.g., 9876543210" required>
+                    </div>
+                    <button type="submit">Add Patient</button>
+                </form>
+                <p id="formMessage" class="message"></p>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
