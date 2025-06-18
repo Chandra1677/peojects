@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital E-Gram Panchayat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Digital E-Gram Panchayat</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+                <li><a href="#schemes">Schemes</a></li>
+                <li><a href="#complaints">Submit Complaint</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li id="adminLoginLink"><a href="#admin">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Welcome to our E-Gram Panchayat Portal</h2>
+            <p>Connecting citizens with local administration for efficient services and information.</p>
+        </section>
+
+        <section id="announcements" class="section-card">
+            <h2>Latest Announcements</h2>
+            <div id="announcementsList">
+                <p>Loading announcements...</p>
+            </div>
+        </section>
+
+        <section id="schemes" class="section-card">
+            <h2>Government Schemes & Programs</h2>
+            <div id="schemesList">
+                <p>Details about various government schemes will appear here.</p>
+            </div>
+        </section>
+
+        <section id="complaints" class="section-card">
+            <h2>Submit a Complaint</h2>
+            <form id="complaintForm">
+                <label for="complaintName">Your Name:</label>
+                <input type="text" id="complaintName" required>
+
+                <label for="complaintEmail">Your Email (Optional):</label>
+                <input type="email" id="complaintEmail">
+
+                <label for="complaintSubject">Subject:</label>
+                <input type="text" id="complaintSubject" required>
+
+                <label for="complaintDescription">Description:</label>
+                <textarea id="complaintDescription" rows="5" required></textarea>
+
+                <button type="submit">Submit Complaint</button>
+                <p id="complaintMessage"></p>
+            </form>
+        </section>
+
+        <section id="contact" class="section-card">
+            <h2>Contact Us</h2>
+            <p>Gram Panchayat Office, [Your Village/Town Name]</p>
+            <p>Phone: [Your Phone Number]</p>
+            <p>Email: [Your Email Address]</p>
+        </section>
+
+        <section id="admin" class="section-card" style="display: none;">
+            <h2>Admin Panel</h2>
+            <div id="adminAuth">
+                <h3>Admin Login</h3>
+                <form id="adminLoginForm">
+                    <label for="adminEmail">Email:</label>
+                    <input type="email" id="adminEmail" required>
+
+                    <label for="adminPassword">Password:</label>
+                    <input type="password" id="adminPassword" required>
+
+                    <button type="submit">Login</button>
+                    <p id="adminAuthMessage"></p>
+                </form>
+            </div>
+            <div id="adminContent" style="display: none;">
+                <h3>Welcome Admin!</h3>
+                <h4>Add New Announcement</h4>
+                <form id="addAnnouncementForm">
+                    <label for="newAnnouncementTitle">Title:</label>
+                    <input type="text" id="newAnnouncementTitle" required>
+
+                    <label for="newAnnouncementContent">Content:</label>
+                    <textarea id="newAnnouncementContent" rows="3" required></textarea>
+
+                    <button type="submit">Add Announcement</button>
+                    <p id="addAnnouncementMessage"></p>
+                </form>
+
+                <h4>Complaints (Latest)</h4>
+                <ul id="adminComplaintsList">
+                    <li>No complaints yet.</li>
+                </ul>
+                <button id="adminLogoutButton">Logout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Digital E-Gram Panchayat. All rights reserved.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script> <script src="script.js"></script>
+</body>
+</html>
